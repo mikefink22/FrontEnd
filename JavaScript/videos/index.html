@@ -172,7 +172,8 @@
         </code>
         <p><i>Nota: El atributo defer indica al navegador que no espere por el script, sino que siga procesando el HTML
             y construyendo el DOM. El script se carga en segundo plano y se ejecuta cuando el DOM está completo. Esto
-            evita que el script bloquee la visualización de la página o interfiera con otros elementos del DOM. Además, el
+            evita que el script bloquee la visualización de la página o interfiera con otros elementos del DOM. Además,
+            el
             atributo defer garantiza que los scripts se ejecuten en el orden en que aparecen en el documento, lo que
             puede ser importante si hay dependencias entre ellos</i></p>
       </li>
@@ -195,18 +196,31 @@
         let para = document.createElement("p");
         let button = document.querySelector("button")
         para.textContent = text;
-        button.insertAdjacentElement("afterend",para);    <!-- para insertar el párrafo inmediatamente después del botón -->    
+        button.insertAdjacentElement("afterend", para);    <!-- para insertar el párrafo inmediatamente después del botón --> 
       }
       document.addEventListener("DOMContentLoaded", function () {
-           
+
       });
     </script>
 
     <button onclick="createParagraph('Por fin?')">Clickéame!!</button>
 
+    <p>Es una mala práctica contaminar tu HTML con Javascript y es ineficiente; habría que incluir el atributo
+      <i>onclick="createParagraph()"</i> en cada botón al que desees que se aplique Javascript.
+    </p>
+    <p>El uso de una construcción de Javascript pura te permite seleccionar a todos los botones usando una instrucción.
+      El código que usamos anteriorrmente para cumplir este propósito se ve así:</p>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+      const buttons = document.querySelectorAll("button");<br>
 
+      for (let i = 0; i < buttons.length; i++) {<br>
+          buttons[i].addEventListener("click", createParagraph);<br>
+      }
+  </code>
+    <p>Esto puede ser un poco más largo que el atributo <i>onclick</i>, pero funcionará para todos los botones, sin
+      importar cuántos haya en la página, ni cuántos se agreguen o eliminen. No es necesario cambiar el JavaScript.</p>
 
-    <p>Testigo</p>
 
 
 
