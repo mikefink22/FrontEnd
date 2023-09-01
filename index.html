@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Es una mala práctica contaminar tu HTML con Javascript y es ineficiente; habría que incluir el atributo
+        <i>onclick="createParagraph()"</i> en cada botón al que desees que se aplique Javascript.
+    </p>
+    <p>El uso de una construcción de Javascript pura te permite seleccionar a todos los botones usando una instrucción.
+        El código que usamos anteriorrmente para cumplir este propósito se ve así:</p>
+    <p><strong>Ejemplo:</strong></p>
+    <code>
+        const buttons = document.querySelectorAll("button");<br>
+
+        for (let i = 0; i < buttons.length; i++) {<br>
+            buttons[i].addEventListener("click", createParagraph);<br>
+        }
+    </code>
+    <p>Esto puede ser un poco más largo que el atributo <i>onclick</i>, pero funcionará para todos los botones, sin importar
+        cuántos haya en la página, ni cuántos se agreguen o eliminen. No es necesario cambiar el JavaScript.</p>
+</body>
+
+</html>
