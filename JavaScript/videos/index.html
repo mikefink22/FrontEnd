@@ -191,38 +191,62 @@
     <img src="controladores.png" alt="ejemplo controladores">
     <br>
 
-    <script defer>
+    <script>
       function createParagraph(text) {
         let para = document.createElement("p");
         let button = document.querySelector("button")
         para.textContent = text;
-        button.insertAdjacentElement("afterend", para);    <!-- para insertar el párrafo inmediatamente después del botón --> 
+        button.insertAdjacentElement("afterend", para);    <!-- para insertar el párrafo inmediatamente después del botón -->
       }
       document.addEventListener("DOMContentLoaded", function () {
 
       });
     </script>
 
-    <button onclick="createParagraph('Por fin?')">Clickéame!!</button>
+    <div align="center"> <button style="font-size: 20px" ;
+        onclick="createParagraph('Hola!!! Soy el resultado de la acción de tu dedo sobre el mouse.')">Clickéame!!</button>
+    </div>
 
-    <p>Es una mala práctica contaminar tu HTML con Javascript y es ineficiente; habría que incluir el atributo
-      <i>onclick="createParagraph()"</i> en cada botón al que desees que se aplique Javascript.
+    <p>Pero... Es una mala práctica contaminar tu HTML con Javascript y es ineficiente; habría que incluir el atributo
+      <i>onclick="createParagraph()"</i> en cada botón al que desees que se aplique Javascript. El uso de una
+      construcción de Javascript pura te permite seleccionar a todos los botones usando una instrucción. El código que
+      usamos anteriorrmente para cumplir este propósito se ve así:
     </p>
-    <p>El uso de una construcción de Javascript pura te permite seleccionar a todos los botones usando una instrucción.
-      El código que usamos anteriorrmente para cumplir este propósito se ve así:</p>
+
     <p><strong>Ejemplo:</strong></p>
     <code>
-      const buttons = document.querySelectorAll("button");<br>
-
-      for (let i = 0; i < buttons.length; i++) {<br>
-          buttons[i].addEventListener("click", createParagraph);<br>
-      }
+      <p style="margin: 25px;">const buttons = document.<span style="color:red">querySelectorAll</span>(<span style="color:green">"button"</span>);</p>
+      <p style="margin: 25px;">for (let i = <span style="color:green">0</span>; i < buttons.length; i++) {</p>
+      <p style="margin: 25px;">buttons[i].<span style="color:red">addEventListener</span>(<span style="color:green">"click"</span>, createParagraph);</p>
+      <p style="margin: 25px;">}</p>      
   </code>
+    <!--   Investigar propiedad "white-space:pre" para colocar en el elemento <code>. O en vez de <code> usar la etiqueta <pre> -->
+
     <p>Esto puede ser un poco más largo que el atributo <i>onclick</i>, pero funcionará para todos los botones, sin
       importar cuántos haya en la página, ni cuántos se agreguen o eliminen. No es necesario cambiar el JavaScript.</p>
 
+    <h3 id="cargaScripts">Estrategias para la carga de scripts</h3>
+    <p>Hay una serie de problemas relacionados con la carga de los scripts en el momento adecuado. Un problema común es
+      que todo el HTML de una página se carga en el orden en que aparece. Si estás utilizando JavaScript para manipular
+      elementos en la página (o exactamente, el <a href="https://urx1.com/QiLCS" target="_blank">Modelo de objetos del
+        documento (en-US)</a>), tu código no funcionará si el JavaScript se carga y procesa antes que el HTML que estás
+      intentando haga algo.</p>
+    <p>En los ejemplos de código anteriores, en los ejemplos internos y externos, JavaScript se carga y se ejecuta en el
+      encabezado del documento, antes de analizar el cuerpo HTML. Esto podría causar un error, por lo que hemos
+      utilizado algunas construcciones para solucionarlo. En el ejemplo interno, podemos ver esta estructura alrededor
+      del código:</p>
+    <pre>
+        document.<span style="color:red">addEventListener</span>(<span style="color:green">"DOMContentLoaded"</span>, function() {
+        });</pre>
 
+    <p>Este es un detector de eventos, que escucha el evento "DOMContentLoaded" del navegador, lo cual significa que el
+      cuerpo HTML está completamente cargado y analizado. El JavaScript dentro de este bloque no se ejecutará hasta que
+      se active ese evento.</p>
 
+    <p>En el ejemplo externo, usamos una función de JavaScript más moderno para resolver el problema, el atributo defer,
+      que le dice al navegador que continúe descargando el contenido HTML una vez que se ha alcanzado la etiqueta del
+      elemento &lt;script&gt;. Tanto el script como el HTML se cargarán simultáneamente y el código funcionará. Solo
+      funciona para scripts externos.</p>
 
     <h1>Hola JavaScript - Tipos de Datos</h1>
     <p>Ver <a href="ejemplos.html" target="_blank">ejemplos</a>.</p>
@@ -244,12 +268,14 @@
     también pueden recibir y devolver valores, lo que permite crear programas más dinámicos e interactivos.</p>
   <p>La sintaxis básica de una función en JavaScript es la siguiente:</p>
 
-  <code>function nombre (parametros) {<br>
+  <pre>
+      function nombre (parametros) {
+
           // Código a ejecutar:
-          <br>       
+                
           return valor; // Opcional
-          <br>
-        }</code>
+        
+      }</pre>
   <br>
 
   <p>Dónde:</p>
