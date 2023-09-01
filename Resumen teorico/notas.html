@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+
+<body>
+    <a href="Teoricos.html">Volver a inicio</a>
+
+    <nav>
+        <ul>
+            <li><a href="#Atributos">Atributos de las Etiquetas</a></li>
+            <li><a href="#Emmet">EMMET</a></li>
+            <li><a href="#Secciones">Sectorizar Body</a></li>
+            <li><a href="#split">Expresiones Regulares</a></li>
+        </ul>
+    </nav>
+
+    <section id="Atributos">
+        <h3>Atributos Básicos de las Etiquetas </h3>
+        <table border="1">
+            <tr>
+                <th>Atributo</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>id="texto"</td>
+                <td>Establece un indicador único a cada elemento</td>
+            </tr>
+            <tr>
+                <td>class="texto"</td>
+                <td>Establece la clase CSS que se aplica a los estilos del elemento</td>
+            </tr>
+            <tr>
+                <td>style="texto"</td>
+                <td>Aplica de forma directo los estilos CSS de un elemento</td>
+            </tr>
+            <tr>
+                <td>title="texto"</td>
+                <td>Establece el título del elemento (mejora la accesibilidad)</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="Emmet">
+        <h3>EMMET</h3>
+        <p>Para crear una lista con la etiqueta strong dentro sin tener que escribir cada elemento, usando un atajo, una
+            forma de hacerlo es usando la extensión Emmet para Visual Studio Code, que te permite escribir abreviaturas
+            de HTML y CSS y expandirlas en código.
+            <br><br>Por ejemplo, si escribes ul>li*3>strong y presionas Tab, se creará el siguiente código:
+        </p>
+
+        &lt;ul&gt;<br>
+        &lt;li&gt; &ltstrong&gt; &lt/strong&gt;&lt;/li &gt;<br>
+        &lt;li&gt; &ltstrong&gt; &lt/strong&gt;&lt;/li &gt;<br>
+        &lt;li&gt; &ltstrong&gt; &lt/strong&gt;&lt;/li &gt;<br>
+        &lt;/ul&gt;
+        <p>Más información en:</p>
+        <a href="https://code.visualstudio.com/docs/getstarted/keybindings" target="_blank">Emmet in Visual Studio
+            Code</a> <br>
+        <a href="https://learn.microsoft.com/en-us/visualstudio/ide/using-the-task-list?view=vs-2022"
+            target="_blank">Emmet cheat sheet</a>
+    </section>
+
+    <section id="Secciones">
+        <h3>SECTORIZAR "body"</h3>
+        <p>Una forma de sectorizar mejor el "body" es dividirlo en secciones usando la etiqueta
+            <strong>&lt;section&gt;</strong> de HTML.
+            Esta etiqueta define una sección semántica en un documento, como una introducción, un capítulo, una
+            subsección, etc.
+            Puedes usar CSS para darle estilo y posición a cada sección, y así crear un diseño más organizado y
+            atractivo.
+        </p>
+        <p>En el resultado <a
+                href="https://stackoverflow.com/questions/28029566/how-can-i-divide-a-body-into-five-equal-sections"
+                target="_blank">1</a>
+            puedes ver cómo dividir el body en cinco secciones iguales usando la etiqueta &lt;section&gt; y el atributo
+            width: 20%.
+            También puedes usar otros valores de porcentaje o de unidades absolutas (como píxeles) para ajustar el
+            tamaño de cada sección
+            según tu preferencia.</p>
+        <p>En el resultado <a href="https://stackoverflow.com/questions/7552879/split-html-body-in-two-parts"
+                target="_blank">2</a> puedes ver cómo dividir el body en dos partes usando la etiqueta &lt;div&gt; y el
+            atributo height: 50%.
+            También puedes usar la propiedad background de CSS para darle un color diferente a cada parte. </p>
+        <p>En el resultado <a href="https://stackoverflow.com/questions/19356854/divide-page-into-3-sections-with-css"
+                target="_blank">3</a> puedes ver algunos ejemplos de cómo dividir el body en tres secciones: una
+            cabecera, un contenido y un pie de página. <br>
+            Puedes usar la propiedad position de CSS para fijar la posición de cada sección y evitar que se solapen.</p>
+
+    </section>
+
+    <section id="split">
+        <h3>EXPRESIONES REGULARES</h3>
+        <p> Una expresión regular es una forma de describir un patrón de caracteres que se quiere buscar o reemplazar en
+            un texto.</p>
+        <p> Por ejemplo, en el código usa el método array.split() para dividir un array por un separador, que será una
+            expresión regular. </p>            
+        <p> En este caso, la expresión regular es /[aeiou]/, que significa “cualquier vocal”. Entonces, el método
+            array.split() va a separar el array por cada vez que encuentre una vocal, y va a devolver un nuevo array con
+            los fragmentos que quedan entre las vocales. Por ejemplo, si el array original es [“manzana”, “banana”,
+            “naranja”, “pera”], el nuevo array será [“m”, “nz”, “n”, “b”, “n”, “n”, “r”, “nj”, “p”, “r”].</p>
+        <p>Puedes probar el código en la consola y como puedes ver, cada vocal ha sido eliminada y solo quedan las
+            consonantes.</p>
+        <p>Más información sobre expresiones regulares:</p>
+        <p></p>
+            <p><a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular" target="_blank">Expresión regular - Wikipedia, la enciclopedia libre</a></p>
+            <p><a href="https://learn.microsoft.com/es-es/dotnet/standard/base-types/regular-expression-language-quick-reference" target="_blank">Lenguaje de expresiones regulares - Referencia rápida</a></p>
+        
+        
+    </section>
+
+
+
+    <br>
+    <a href="Teoricos.html">Volver a inicio</a>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ENLACES EN HTML<h2>
+        <a href="Teoricos.html">Volver a inicio</a>
+        <p>Un sitio web está constituido de páginas interconectadas, que se relacionan mediante enlaces de
+            hipertexto.</p>
+
+        <h3>SINTAXIS DE UN ENLACE</h3>
+
+        <P>Sintaxis general:</P>
+        <pre><code>&lt;a href="destino"&gt;contenido&lt;/a&gt;</code></pre>
+        <p>"destino" Será una página, un correo electrónico o un archivo</p>
+        <p>Y "contenido" puede ser un texto o una imagen</p>
+        <p>Ejemplo de enlace a Egg incrustado en una imagen:</p>
+        <a href="https://eggeducacion.com/es-AR/" target="_blank"><img src="logo.jpg" alt=""></a>
+
+        <h3>EL ASPECTO DE LOS ENLACES</h3>
+
+        <P>Predifinido: subrayados y coloreados en azul</P>
+        <a href="https://eggeducacion.com/es-AR/">Enlace a Egg</a>  
+        <br>
+        <p><strong>TIPOS DE ENLACES</strong></p>
+        <ul>
+            <li>Enlaces locales</li>
+            <p>Son del tipo <a href="archivo.html">"archivo.html"</a>; siendo "archivo.html" una página ya creada
+                anteriormente.</p>
+            <li>Enlaces remotos</li>
+        </ul>
+        <h3>RUTAS DE LOS ENLACES</h3>
+        <p>Además del nombre del archivo debemos espeficiar la ruta al directorio en que nuestro archivo.html está alojado</p>
+        <p><strong>Tips:</strong></p>
+        <ol>
+            <li>Situarse mentalmente en el directorio en el que se encuentra la página donde vamos a crear el enlace</li>
+            <li>Si la página destino está en el <strong>mismo directorio</strong> que el archivo simplemente podemos colocar el nombre del archivo</li>
+            <li>Si la pagina de destino está en una carpeta o subdirectorio <strong>interior</strong> al directorio donde está el archivo de origen, hay que<br> 
+            <strong>enumerar cada uno de los directorios</strong> por los que pasamos hasta llegar al archivo de destino, separándolos por el símbolo "/".</li>
+            <li>Si la página destino se encuentra en un <strong>directorio padre</strong>, hemos de escribir "../" tantas veces como niveles subamos <br>
+            en la arborescencia hasta dar con el direcotrio donde está emplazado el archivo destino</li>
+            <li>Si la página se encuentra en otro directorio <strong>no incluido ni incluyente</strong> del archivo origen, tendremos que subir por medio de ".." <br>
+            hasta encontrar el directorio que contiene a la página destino.</li>
+            
+        </ol>
+        <a href="Teoricos.html">Volver a inicio</a>
+</body>
+</html>

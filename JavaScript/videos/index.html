@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción a JavaScript</title>
+  <!-- <script type="text/javascript">
+        alert("Hola desde el head");
+    </script>  (puede o no estar en el head, no es recomendable que esté en el head)-->
+  <!--  <script type="text/javascript">
+    alert("Hola desde el head");
+  </script> -->
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#JSIntro">Introducción a Javascript</a></li>
+      <li><a href="#Datos">Tipos de Datos</a></li>
+      <li><a href="#JSON">JSON</a></li>
+      <li><a href="#Arrays">Arrays</a></li>
+      <li><a href="../../Resumen teorico/Teoricos.html">Principal</a></li>
+    </ul>
+
+  </nav>
+  <section id="JSIntro">
+    <h1>Introducción a Javascript</h1>
+    <p>Fuente: <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps" target="_blank">Primeros
+        pasos con JavaScript</a></p>
+
+    <h2>¿Qué es Javascript?</h2>
+    <p>Es un lenguaje de secuencias de comandos que te permite crear
+      contenido de actualización dinámica, controlar multimedia, animar imágenes y prácticamente todo lo
+      demás. El núcleo del lenguaje JavaScript del lado del cliente consta de algunas características de
+      programación comunes que te permiten hacer cosas como:</p>
+    <ul>
+      <li>Almacenar valores útiles dentro de variables.</li>
+      <li>Operaciones sobre fragmentos de texto.</li>
+      <li>Eecutar código en respuesta a ciertos eventos que ocurren en una página web.</li>
+      <li>Y mucho más!</li>
+    </ul>
+    <p>Lo que aún es más emocionante es la funcionalidad construida sobre el lenguaje JavaScript de lado del cliente.
+      Las denominadas interfaces de programación de aplicaciones (API) te proporcionan superpoderes adicionales para
+      utilizar en tu código JavaScript.</p>
+    <p>Las API son conjuntos de bloques de construcción de código listos para usar que permiten a un desarrollador
+      implementar programas que de otro modo serían difíciles o imposibles de implementar. Hacen lo mismo para la
+      programación que los kits de muebles prefabricados para la construcción de viviendas</p>
+    <p>Generalmente se dividen en dos categorías: APIs del navegador y APIs de terceros:</p>
+    <img src="../../Resumen teorico/apis.png" alt="Categorías de APIs">
+
+    <ul>
+
+      <li>APIs del navegador
+        <ul>
+          <li>La <a href="https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model" target="_blank">API del
+              DOM (Document Object Model)</a> te permite manipular HTML y CSS, crear, eliminar y cambiar el HTML,
+            aplicar dinámicamente nuevos estilos a tu página, etc.</li>
+          <li>La <a href="https://developer.mozilla.org/es/docs/Web/API/Geolocation" target="_blank">API de
+              Geolocalización</a> recupera información geográfica. Así es como Google Maps puede encontrar tu
+            ubicación y trazarla en un mapa.</li>
+          <li>Las APIs Canvas y WebGL te permiten crear gráficos animados en 2D y 3D - consulta <a
+              href="https://experiments.withgoogle.com/collection/chrome" target="_blank">Experimentos de Chrome</a> y
+            <a href="https://webglsamples.org/" target="_blank">webglsamples</a>.
+          </li>
+          <li>APIs de audio y video como <a href="https://developer.mozilla.org/es/docs/Web/API/HTMLMediaElement"
+              target="_blank">HTMLMediaElement</a> y <a href="https://developer.mozilla.org/es/docs/Web/API/WebRTC_API"
+              target="_blank">WebRTC</a> te permiten hacer cosas realmente interesantes con
+            multimedia.</li>
+        </ul>
+
+      </li>
+      <li>Las APIs de terceros no están integradas en el navegador de forma predeterminada y, por lo general, debes
+        obtener su código e información de algún lugar de la Web. Por ejemplo:
+        <ul>
+          <li>La <a href="https://developer.twitter.com/en/docs" target="_blank">API de Twitter</a> te permite hacer
+            cosas como mostrar tus últimos tweets en tu sitio web.</li>
+          <li>La <a href="https://developers.google.com/maps?hl=es-419" target="_blank">API de Google Maps</a> y la <a
+              href="https://wiki.openstreetmap.org/wiki/API" target="_blank">API de OpenStreetMap (info)</a> te permiten
+            insertar mapas personalizados en tu sitio web
+            y otras funciones similares.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>¿Qué está haciendo Javascript en tu página?</h2>
+    <p>Cuando cargas una página web en tu navegador, estás ejecutando tu código (HTML, CSS y JavaScript) dentro de un
+      entorno de ejecución (la pestaña del navegador). Esto es como una fábrica que toma materias primas (el código) y
+      genera un producto (la página web).</p>
+    <img src="../../Resumen teorico/queHaceJs.png" alt="fábrica">
+
+    <p>Un uso muy común de JavaScript es modificar dinámicamente HTML y CSS para actualizar una interfaz de usuario, a
+      través de la API del modelo de objetos del documento. el código de tus documentos web generalmente se cargan y
+      ejecutan en el orden en que aparece en la página. Si JavaScript se carga e intenta ejecutarse antes de que se
+      hayan cargado el HTML y el CSS al que afecta, pueden producirse errores. Por ello hay <a href="#cargaScripts">
+        Estrategias de carga de scripts</a>.</p>
+
+    <h3>Seguridad del navegador</h3>
+    <p>Cada pestaña del navegador tiene su propio depósito separado para ejecutar código (entornos de ejecución) — esto
+      significa que, en la mayoría de los casos, el código de cada pestaña se ejecuta de forma completamente
+      independiente y el código de una pestaña no puede afectar el código en otra pestaña, o en otro sitio web.</p>
+
+    <h3>Orden de ejecución de Javascript</h3>
+    <p>Cuando el navegador encuentra un bloque de JavaScript, generalmente lo ejecuta en orden, de arriba a abajo. Esto
+      significa que debes tener cuidado con el orden en el que colocas las cosas. Por ejemplo:</p>
+    <code>
+      const para = document.querySelector("p");<br>
+      para.addEventListener("click", updateName);<br>
+      function updateName() {<br>
+        let name = prompt("Enter a new name");<br>
+        para.textContent = "Player 1: " + name;<br>
+      }
+    </code>
+    <!-- Ya sé que no debo utilizar estilos dentro del html -->
+    <p>Aquí seleccionamos un párrafo de texto (línea 1), luego adjuntamos un detector de eventos (línea 3) de modo que
+      cuando se hace clic en el párrafo, el bloque de código <span style="color:green">updateName()</span> (líneas 5-8)
+      se ejecuta. La función updateName() pide al usuario un nuevo nombre y luego inserta ese nombre en el párrafo para
+      actualizar la pantalla.</p>
+    <p>Si se cambiara el orden de las dos primeras líneas de código, ya no funcionaría — en su lugar, se obtendría un
+      error en la consola del desarrollador del navegador — <i style="color:red">TypeError: para is
+        undefined</i></span>. Esto significa que el objeto para aún no existe, por lo que no podemos agregarle un
+      detector de eventos.</p>
+    <p><i>Nota: Este es un error muy común; hay que tener cuidado de que los objetos a los que se hace referencia
+        existan en el código antes de intentar hacer algo con ellos.</i></p>
+
+    <h3>Código interpretado versus compilado</h3>
+    <p>JavaScript es un lenguaje de programación interpretado ligero. El navegador web recibe el código JavaScript en su
+      forma de texto original y ejecuta el script a partir de ahí. Desde un punto de vista técnico, la mayoría de los
+      intérpretes de JavaScript modernos utilizan una técnica llamada compilación en tiempo real (JIT) para mejorar el
+      rendimiento; el código fuente de JavaScript se compila en un formato binario más rápido mientras se usa el script,
+      de modo que se pueda ejecutar lo más rápido posible. Sin embargo, JavaScript todavía se considera un
+      <strong>lenguaje interpretado</strong>, ya que la compilación se maneja en el entorno de ejecución, en lugar de
+      antes.
+    </p>
+
+    <h3>Código de lado del servidor versus de lado del cliente</h3>
+    <p>El código de lado del cliente es un código que se ejecuta en la computadora del usuario — cuando se ve una página
+      web, el código de lado del cliente de la página se descarga, luego se ejecuta y se muestra en el navegador.</p>
+    <p>El código de lado del servidor, por otro lado, se ejecuta en el servidor, luego sus resultados se descargan y se
+      muestran en el navegador. Ejemplos de lenguajes web populares de lado del servidor incluyen a ¡PHP, Python, Ruby,
+      ASP.NET y... JavaScript! JavaScript también se puede utilizar como lenguaje de lado del servidor, por ejemplo, en
+      el popular entorno Node.js - Más info en <a href="https://developer.mozilla.org/es/docs/Learn/Server-side"
+        target="_blank">Sitios web dinámicos — Programación de lado del servidor</a>.</p>
+
+    <h3>Código dinámico versus estático</h3>
+    <p>se refiere a la capacidad de actualizar la visualización de una página web/aplicación para mostrar diferentes
+      cosas en diferentes circunstancias, generando contenido nuevo según sea necesario. El código de lado del servidor
+      genera dinámicamente nuevo contenido en el servidor, p. ej. extraer datos de una base de datos, mientras que
+      JavaScript de lado del cliente genera dinámicamente nuevo contenido dentro del navegador del cliente, p. ej.
+      creando una nueva tabla HTML, llenándola con los datos solicitados al servidor y luego mostrando la tabla en una
+      página web que se muestra al usuario. El significado es ligeramente diferente en los dos contextos, pero
+      relacionado, y ambos enfoques (de lado del servidor y de lado del cliente) generalmente funcionan juntos.</p>
+    <p>Una página web sin contenido que se actualiza dinámicamente se denomina estática — simplemente muestra el mismo
+      contenido todo el tiempo.</p>
+
+    <h2>¿Cómo agregar JavaScript a tu página?</h2>
+    <p>JavaScript se aplica a tu página HTML de manera similar a CSS. Mientras que CSS usa elementos <i
+        style="color:blue">&lt;link&gt;</i> para aplicar hojas de estilo externas y elementos <i
+        style="color:blue">&lt;style&gt;</i> para aplicar hojas de estilo internas a HTML, JavaScript solo necesita un
+      amigo en el mundo de HTML: el elemento <i style="color:blue">&lt;script&gt;(en-US)</i>.</p>
+
+    <h3>JavaScript interno</h3>
+    <p>Este es un <a href="ejemplojs.html" target="_blank">Ejemplo de JS interno</a>, es decir contenido dentro de
+      nuestra página html.</p>
+
+    <h3>Javascript externo</h3>
+    <ol>
+      <li>Crear un archivo "script.js" en el mismo directorio que tu HTML (ejemplo anterior).</li>
+      <li>Reemplazamos el elemento script por: <br><br>
+        <code>
+        &lt;script src="script.js" defer&gt;&lt;/script&gt;
+        </code>
+        <p><i>Nota: El atributo defer indica al navegador que no espere por el script, sino que siga procesando el HTML
+            y construyendo el DOM. El script se carga en segundo plano y se ejecuta cuando el DOM está completo. Esto
+            evita que el script bloquee la visualización de la página o interfiera con otros elementos del DOM. Además, el
+            atributo defer garantiza que los scripts se ejecuten en el orden en que aparecen en el documento, lo que
+            puede ser importante si hay dependencias entre ellos</i></p>
+      </li>
+      <li>Dentro del script, agregaremos el código (el mismo del ejemplo pasado)</li>
+      <li>Aquí podemos ver otros <a href="ejemplos.html" target="_blank">ejemplos de códigos</a>. *Nota estos ejemplos
+        fueron los primeros realizados y probablemente la forma de organizar el html y donde colocar los scripts no son
+        los correctos, solo es para visualizar los diferentes scripts.</li>
+    </ol>
+    <p>Por lo general, hacerlo de este modo es mejor en términos de organización del código y para hacerlo reutilizable
+      en diferentes archivos HTML. Además, facilita su lectura.</p>
+
+    <h3>Controladores de JavaScript en línea</h3>
+    <p>A veces podemos encontrarnos con fragmentos de código JavaScript real dentro de HTML. Podría verse algo similar a
+      esto:</p>
+    <img src="controladores.png" alt="ejemplo controladores">
+    <br>
+
+    <script defer>
+      function createParagraph(text) {
+        let para = document.createElement("p");
+        let button = document.querySelector("button")
+        para.textContent = text;
+        button.insertAdjacentElement("afterend",para);    <!-- para insertar el párrafo inmediatamente después del botón -->    
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+           
+      });
+    </script>
+
+    <button onclick="createParagraph('Por fin?')">Clickéame!!</button>
+
+
+
+    <p>Testigo</p>
+
+
+
+    <h1>Hola JavaScript - Tipos de Datos</h1>
+    <p>Ver <a href="ejemplos.html" target="_blank">ejemplos</a>.</p>
+  </section>
+  <section id="JSON">
+    <h1>JSON</h1>
+    <a href="JSON.html"><img src="Jason.jpg" alt="Jason"></a>
+  </section>
+
+  <section id="Arrays">
+    <h1>Arrays en JavaScript</h1>
+    <a href="Arrays.html"><img src="arrays0.png" alt="Arrays en JS"></a>
+  </section>
+
+  <section id="Funciones"><a href="funciones.html" target="_blank">Funciones en JavaScript</a></section>
+
+  <p>Las funciones en JavaScript son objetos que pueden ejecutar un bloque de código cuando se invocan. Las funciones
+    son una forma de reutilizar y organizar el código, evitando la repetición y la complejidad. Las funciones
+    también pueden recibir y devolver valores, lo que permite crear programas más dinámicos e interactivos.</p>
+  <p>La sintaxis básica de una función en JavaScript es la siguiente:</p>
+
+  <code>function nombre (parametros) {<br>
+          // Código a ejecutar:
+          <br>       
+          return valor; // Opcional
+          <br>
+        }</code>
+  <br>
+
+  <p>Dónde:</p>
+  <ul>
+    <li>function es la palabra clave que indica que se está definiendo una función.</li>
+    <li> nombre es el identificador que se le da a la función, que se usa para invocarla posteriormente.</li>
+    <li>parametros son los valores que se le pasan a la función cuando se invoca, separados por comas. Los
+      parámetros son opcionales y pueden ser de cualquier tipo de dato.</li>
+    <li><span>// Código a ejecutar</span> es el bloque de código que se ejecuta cuando se llama a la función. Puede
+      contener cualquier sentencia válida de JavaScript, incluyendo otras funciones.</li>
+    <li></li>
+  </ul>
+
+  </p>
+</body>
+
+</html>

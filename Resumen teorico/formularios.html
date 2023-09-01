@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>FORMULARIOS EN HTML</h2>
+    <a href="Teoricos.html">Volver a inicio</a>
+    <p>Se utilizan para intercambiar información con el visitante a nuestra página, como:</p>
+    <ul>
+        <li>Realizar búsquedas</li>
+        <li>Introducir datos personales</li>
+    </ul>
+    <p>Los datos que el usuario introduce en estos campos son enviados al correo electrónico del administrador <br>
+        del formulario o a un programa encargado de administrarlos automáticamente.</p>
+    <h3>¿QUÉ SE PUEDE HACER CON UN FORMULARIO?</h3>
+    <p>Usando HTML solo podemos construir un formulario con diversos campos y al puslar el botón de enviar, generar un
+        <br>
+        mensaje de que se ha registrado la información.
+    </p>
+    <p>Para manejar la información y guardarla, usaremos Java y su conexión a base de datos.</p>
+
+    <h3>¿COMO HACER UN FORMULARIO EN HTML?</h3>
+    <p>Se definen con la etiqueta <strong>&lt;form&gt;</strong> y su cierre</p>
+    <p>Dentro de esta etiqueta "form" debemos especificar algunos atributos:</p>
+    <ul>
+        <li><strong>action:</strong> define el tipo de acción a llevar a cabo con el formulario</li>
+        <ul>
+            <li>El formulario es enviado a una dirección de correo electrónico mediante <br>
+                &lt;form <strong>action=</strong>"ruta del método que va a manejar la información"&gt;&lt;/form&gt;</li>
+            <li>El formulario es enviado a un programa o script que procesa su contenido.</li>
+        </ul>
+        <li><strong>method:</strong> especifica la forma en la que el formulario es enviado mediante los atributos
+            <strong>POST</strong> y <strong>GET</strong>. <br>
+            Siempre usaremos POST salvo que especifiquemos de otro modo.
+        </li>
+        <li><strong>enctype:</strong> indica la forma en que viajará la información que se mande por el formulario. Ej.
+            como texto "text/plain" o si el formulario <br>
+            contiene una imagen, el atributo debería ser "multipart/form-data"
+        </li>
+    </ul>
+    <i>Nota: action y method son atributos indispensables para guardar la info de nuestro form en Java.</i> <br>
+    <p>La etiqueta quedaría de la siguiente manera, por ejemplo:</p>
+    <p>&lt;form action="ruta del método que va a manejar la información" method="POST" enctype="multipart/form-data"&gt;
+    </p>
+    &lt;-- contenido del formulario --&gt; <br>
+    <br>
+    &lt;/form&gt;<br>
+    <a href="Teoricos.html">Volver a inicio</a>
+    <br>
+
+    <h3>CAMPOS DE TEXTO</h3>
+    <p>Las etiquetas para crear campos de texto pueden ser de dos tipos:</p>
+    <h4>ETIQUETA INPUT</h4>
+    <p>Las cajas de texto son colocadas por medio de la etiqueta input y los atributos type y name: <br>
+        &lt;<strong>input</strong> type="text" name="nombre"&gt;</p>
+    <p>Se ve de la siguiente manera:</p>
+    <input type="text">
+
+    <h4>ATRIBUTO TYPE</h4>
+    <p>Sirve para especificar el tipo de dato que se va a ingresar en nuestro input:</p>
+
+    <ul>
+        <li>NUMBER</li>
+        &lt;input type="number"&gt; <br><br>
+        <input type="number">
+        <br><br>
+        <li>DATE</li>
+        &lt;input type="date"&gt; <br><br>
+        <input type="date"><br><br>
+        <li>EMAIL</li>
+        &lt;input type="email"&gt; <br><br>
+        <input type="email"><br><br>
+        <li>TEXTO OCULTO</li>
+        &lt;input type="password"&gt; <br><br>
+        <input type="password"><br><br>
+    </ul>
+
+    <h4>ATRIBUTO NAME</h4>
+    <p>El nombre del elemento del formulario es de gran importancia para poder identificarlo en nuestro programa de
+        procesamiento.</p>
+
+    <h4>ATRIBUTOS PRESCINDIBLES</h4>
+
+    <ul>
+        <li><strong>size:</strong> define el tamaño de la caja de texto, en número de caracteres visibles.</li>
+        <li><strong>maxlength:</strong> indica el tamaño máximo del texto, en número de caracteres, que puede ser
+            escrito en el campo.</li>
+        <li><strong>value:</strong> para asignar un valor predeterminado al campo.</li>
+        <li><strong>placeholder:</strong> especifica una pista que describe el valor esperado para el campo:</li>
+        <input type="text" name="curso" placeholder="Nombre del Curso">
+    </ul>
+    <i>Nota: todos estos ejemplos de input deben ir entre etiquetas de apertura y de cierre form.</i>
+
+    <h3>ETIQUETA TEXTAREA PARA TEXTO LARGO</h3>
+    <p>Es un campo cuando el contenido a enviar es un comentario, opinión, etc, en los que existe la posibilidad de que
+        el usuario desee rellenar
+        varias lineas
+    </p>
+    <p><strong>Atributos:</strong></p>
+    <ul>
+        <li><strong>name:</strong> asociar el contenido a un nombre que será asemejado a una variable en un lenguaje de
+            programación.</li>
+        <li><strong>rows:</strong> define el número de líneas del campo de texto.</li>
+        <li><strong>cols:</strong> define el número del columnas del campo de texto</li>
+    </ul>
+    <p>Ejemplo: &lt;textarea name="comentario" cols="75" rows="10"&gt;Escribe tu comentario...&lt;/textarea&gt; </p>
+    <textarea name="comentario" cols="75" rows="10">Escribe tu comentario...</textarea>
+
+    <h4>ETIQUETA LABEL</h4>
+    <p>El elemento <strong>&lt;label&gt;</strong> provee una descripción corta que acompaña al campo de texto que
+        informa al usuario sobre lo que debe ingresar.</p>
+    <p>También podemos asociar una etiqueta label a un campo para que el usuario pueda acceder al campo de texto al
+        clickear el label. Esto lo hacemos utilizando el
+        atributo <strong>for</strong> y además en el input vamos a poner el mismo valor, pero en el <strong>atributo
+            ID</strong>:</p>
+
+    <p>&lt;label for="nombre"&gt;Nombre del Usuario&lt;/label&gt; <br>
+        &lt;input type="text" id="nombre" name="nombre"&gt;
+    </p>
+
+    <label for="nombre">Nombre del Usuario</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <h3>OTROS ELEMENTOS DE FORMULARIOS</h3>
+    <p>En muchos casos, permitir al usuario que escriba cualquier texto permite demasiada libertad y puede que la
+        información que éste escriba no sea la que estamos buscando.</p>
+    <p>Por eso es conveniente hacer formularios con opciones predefinidas por nosotros, que pueden ser expresadas por
+        diferentes campos de formulario:</p>
+
+    <ul>
+        <li><strong>LISTAS DE OPCIONES</strong></li>
+        <p>Son menús desplegables que construimos mediante la etiqueta <strong>select</strong>.</p>
+        <p>Dentro de esta etiqueta definiremos su nombre con el atributo name y cada opción será incluida mediante la
+            etiqueta <strong>option</strong></p>
+        <p>Ejemplo del código:</p>
+        &lt;select name="estacion"&gt;<br>
+        &lt;option&gt;Primavera&lt;/option&gt;<br>
+        &lt;option&gt;Verano&lt;/option&gt;<br>
+        &lt;option&gt;Otoño&lt;/option&gt;<br>
+        &lt;option&gt;Invierno&lt;/option&gt;<br>
+        &lt;/select&gt;
+        <p>En una página se vería así:</p>
+        <select name="estacion">
+            <option>Primavera</option>
+            <option>Verano</option>
+            <option>Otoño</option>
+            <option>Invierno</option>
+        </select>
+        <br><br>
+        <ul>
+            <li>Atributos etiqueta opción:</li>
+            <ul>
+                <li><strong>size:</strong> indica el número de valores mostrados a la vez en la lista. Si indicamos un
+                    valor para este atributo veremos las opciones definidas por size y el resto mediante la barra
+                    lateral de desplazamiento</li>
+                <li><strong>multiple:</strong> permite la selección de más elementos de la lista (manteniendo ctrl):
+                </li>
+                <br>
+                <form action="" align="center">
+                    <select name="estacion" size="3" multiple>
+                        <option>Primavera</option>
+                        <option>Verano</option>
+                        <option>Otoño</option>
+                        <option>Invierno</option>
+                    </select>
+                </form>
+
+            </ul>
+            <li>Atributo para la etiqueta option:</li>
+            <p><strong>selected:</strong> este atributo indica que la opción que lo presenta está definida por defecto.
+            </p>
+        </ul>
+        <li><strong>BOTONES DE RADIO</strong></li>
+        <p>En este caso obligamos al usuario a elegir únicamente una de las opciones que se le proponen</p>
+        <p>Usaremos la etiqueta <strong>input</strong> + el atributo <strong>type="radio"</strong></p>
+        <input type="radio" name="estacion" value="1">Primavera
+        <br>
+        <input type="radio" name="estacion" value="2">Verano
+        <br>
+        <input type="radio" name="estacion" value="3">Otoño
+        <br>
+        <input type="radio" name="estacion" value="4">Invierno
+        <br>
+        <br>
+        <p>También podes usar la etiqueta <strong>label</strong> para que al clickearla se active la caja del input.</p>
+        <li><strong>CAJAS DE VALIDACIÓN</strong></li>
+        <p>Este tipo de elementos pueden ser activados o desactivados por el visitante con un simple click sobre la caja
+            en cuestión.</p>
+        <p>Usaremos la etiqueta <strong>input</strong> con el atributo <strong>type="checkbox"</strong>:</p>
+        <input type="checkbox" name="estacion" value="1">Primavera
+        <br>
+        <input type="checkbox" name="estacion" value="2">Verano
+        <br>
+        <input type="checkbox" name="estacion" value="1">Otoño
+        <br>
+        <input type="checkbox" name="estacion" value="1">Invierno
+    </ul>
+    <h3>BOTONES</h3>
+    <p>Como hacemos un botón para provocar el envío del formulario, entre otras cosas.</p>
+    <p>También puede resultar práctico agregar un botón de borrado o acompañar al formulario de datos ocultos que puedan
+        ayudarnos en su procesamiento.
+    </p>
+    <ul>
+        <li><strong>BOTÓN DE ENVÍO DE FORMULARIO</strong></li>
+        <p>Para dar por finalizado el proceso de relleno del usuario y hacerlo llegar a su gestor, el usuario ha de
+            enviarlo mediante un botón previsto a tal efecto. Para esto vamos a utilizar el botón
+            <strong>&lt;button&gt;</strong> y su respectivo cierre. Utilizamos <strong>type="submit"</strong> para
+            especificar que es un botón de envío. Dentro del elemento se puede poner texto y otras
+            etiquetas. Se vería así:
+        </p>
+        <p>&lt;button type="submit"&gt; Enviar &lt;/button&gt;</p>
+        <p>Y en la página se vería así:</p>
+        <button type="submit">Enviar</button>
+        <br><br>
+        <li><strong>BOTÓN DE BORRADO</strong></li>
+        <p>Le permite al usuario borrar todos los datos cargados en el formulario, dejarlo en blanco mediante el
+            atributo <strong>type="reset"</strong></p>
+        <p>Su estructura sintáctica es muy parecida a la del botón anterior:</p>
+        <p>&lt;button type="reset"&gt; Borrar &lt;/button&gt;</p>
+
+        <li><strong>BOTONES NORMALES</strong></li>
+        <p>Botones pulsables como cualquier otro botón. Por si solos no tienen mucha utilidad pero podemos necesitarlos
+            para realizar otras acciones.</p>
+        <p>Sintaxis:</p>
+        <p>&lt;button type="button"&gt; Botón &lt;/button&gt;</p>
+
+        <li><strong>DATOS OCULTOS (CAMPOS HIDDEN)</strong></li>
+        <p>Además de los datos rellenados por el usuario, puede ser útil enviar datos definidos por nosotros mismos que
+            ayuden al programa a procesar el formulario. Estos datos son sobre todo usados por páginas que emplean
+            tecnologías de servidor.</p>
+    </ul>
+    <h3>Ejemplo completo de formulario</h3>
+    <p>&lt;form action="ruta del método que va a manejar la información" method="POST"
+        enctype="multipart/form-data"&gt;&lt;/form&gt; &lt;br&gt;</p>
+        <p>&lt;label for="nombre1"&gt;Nombre del Usuario&lt;/label&gt;</p>
+    <p>&lt;input type="text" id="nombre1" name="nombre1"&gt; &lt;br&gt;</p>
+    <p>&lt;label&gt;Edad del Usuario&lt;/label&gt; &lt;br&gt;</p>
+    <p>&lt;input type="number" name="edad"&gt; &lt;br&gt;</p>
+    <p>&lt;label&gt;Fecha de nacimiento del usuario&lt;/label&gt; &lt;br&gt;</p>
+    <p>&lt;input type="date" name="fechaNac"&gt; &lt;br&gt;</p>
+    <p>&lt;label&gt;Sexo del usuario&lt;/label&gt; &lt;br&gt;</p>
+    <p>&lt;input type="radio" name="sexo value="Hombre"&gt; Hombre &lt;br&gt;</p>
+    <p>&lt;input type="radio" name="sexo value="Mujer"&gt; Mujer &lt;br&gt;</p>
+    <p>&lt;label&gt;Pais nacimiento del usuario&lt;/label&gt; &lt;br&gt;</p>
+    <p>&lt;select name="pais"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Argentina&lt;/option&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Brasil&lt;/option&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Chile&lt;/option&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;Uruguay&lt;/option&gt;<br>
+        &lt;/select&gt;<br>
+        &lt;br&gt;
+    </p>
+    <p>&lt;button type="submit"&gt; Enviar &lt;/button&gt;</p>
+    <p>&lt;button type="reset"&gt; Borrar &lt;/button&gt;</p>
+    <p>Este formulario se verá así:</p>
+    <form action="">
+    <label for="nombre1">Nombre del usuario</label><br>
+    <input type="text" id= "nombre1" name="nombre"> <br>
+    <label>Edad del Usuario</label> <br>
+    <input type="number" name="edad"> <br>
+    <label>Fecha de nacimiento del usuario</label> <br>
+    <input type="date" name="fechaNac"> <br>
+    <label>Sexo del usuario</label> <br>
+    <input type="radio" name="sexo value="Hombre"> Hombre <br>
+    <input type="radio" name="sexo value="Mujer"> Mujer <br>
+    <label>Pais nacimiento del usuario</label> <br>
+    </form>
+
+    <br><br>
+    <a href="Teoricos.html">Volver a inicio</a>
+</body>
+
+</html>

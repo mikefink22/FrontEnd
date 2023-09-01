@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Apply JavaScript example</title>
+  <script>
+    // Javascript va aquí
+    document.addEventListener("DOMContentLoaded", function () {
+      function createParagraph(text) {
+        let para = document.createElement("p");
+        para.textContent = text;
+        document.body.appendChild(para);
+      }
+
+      const buttons = document.querySelectorAll("button");
+      let text = "You clicked the button!"; // Define la variable text
+      for (let i = 0; i < buttons.length; i++) {
+
+        buttons[i].addEventListener("click", function () { createParagraph(text); });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <button>Click me</button>
+  <button onclick="createParagraph('You clicked the button again!!')">Click me!</button> <!-- // esto no funciona FFFFFF -->
+</body>
+
+</html>

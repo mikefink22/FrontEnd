@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="Teoricos.html">Volver a inicio</a>
+    <h3>SECCIONES EN HTML</h3>
+    <p>Las páginas web se trabajan con lo que se conoce como un <strong>esquema</strong> (outline). Esto es un índice de
+        los apartados de una página web que muestra la relación de jerarquía entre los diferentes apartados y
+        subapartados. El concepto de esquema se formalizó en HTML 5 con más precisión que en HTML 4 / XHTML 1 y explica
+        algunas características y formas de utilización de etiquetas de secciones y bloques de contenido.</p>
+    <p>Se pensó que las páginas de HTML se pueden dividir en secciones y en HTML 5 se introdujo una serie de etiquetas
+        para dividir nuestra página en secciones, y dentro de cada sección habrá más etiquetas para que podamos tener un
+        índice de los apartados de la página web.</p>
+    <p>La página dividida con sus distintas etiquetas se ve así:</p>
+
+    <div><img src="secciones.png" alt="Secciones"></div>    
+    
+    <h4>ETIQUETAS:</h4>
+
+    <ul>
+        <li>&lt;section&gt;: se utiliza para representar una sección "general" dentro de un documento o aplicación, como
+            un capítulo de un libro. Puede contener subscciones y si lo acompañamos de h1-h6 podemos estructurar mejor
+            la página creando jerarquías de contenido, algo muy favorable para el posicionamiento web.</li>
+        <li>&lt;article&gt;: representa un componente de una página que consiste en una composición autónoma en un
+            documento, página, aplicación, o sitio web con la intención de que pueda ser reutilizado y repetido.</li>
+        <li>&lt;aside&gt;: es una sección de la página que abarca un contenido relacionado con el contenido que lo
+            rodea, por lo que puede considerarse un contenido independiente. Por ej: barras laterales, efectos
+            tipográficos, elementos publicitarios, etc.</li>
+        <li>&lt;header&gt;: representa un grupo de artículos introductorios o de navegación. Está destinado a contener
+            por lo general la cabecera de la sección (un h1-h6 o hgroup)</li>
+        <li>&lt;nav&gt;: representa una sección de una página que enlaza a otras páginas o a otras partes dentro de la
+            página.</li>
+        <li>&lt;footer&gt;: representa el pie de una sección, con información como el autor, el copyright o el año.</li>
+        <li>&lt;hgroup&gt;: se utiliza para agrupar un conjunto de elementos h1-h6 cuando el título tienen varios
+            niveles.</li>
+    </ul>
+    <h4>ETIQUETAS EXTRAS:</h4>
+    <ul>
+        <li><strong>ETIQUETA DIV</strong></li>
+        <p>Es la etiqueta de división. Se utiliza para hacer divisiones de contenido en la página web como texto,
+            imágenes, encabezado, pie de página, barra de navegación, etc. Es obligatorio cerrar la etiqueta.</p>
+        <ul>
+            <li>Es una etiqueta de nivel de bloque</li>
+            <li>Es una etiqueta de contenedor genérica</li>
+            <li>Se usa para agrupar varias etiquetas de HTML para que se puedan crear secciones y aplicarles estilos en
+                conjunto.</li>
+        </ul>
+        <br>
+        <li><strong>ETIQUETA SPAN</strong></li>
+        <p>Es un <strong>contenedor en línea</strong> genérico para elementos y contenido en línea. Se usa para agrupar
+            elementos con el mismo estilo. No realiza ningún cambio visual por sí misma. Es obligatorio cerrarla.</p>
+            </ul>
+
+        <p>Ejemplo de organización de una página en secciones:</p>
+        <img src="navSecciones.png" alt="Código">
+        <p>Y así se vería:</p>
+        <nav>
+            <ul>
+              <li><a href="#intro">Introducción</a></li>
+              <li><a href="#contenido">Contenido principal</a></li>
+              <li><a href="#conclusion">Conclusión</a></li>
+            </ul>
+          </nav>
+          
+          <section id="intro">
+            <h1>Introducción</h1>
+            <p>Esta es la introducción de mi página.</p>
+          </section>
+          
+          <section id="contenido">
+            <h1>Contenido principal</h1>
+            <p>Este es el contenido principal de mi página.</p>
+          </section>
+          
+          <section id="conclusion">
+            <h1>Conclusión</h1>
+            <p>Esta es la conclusión de mi página.</p>
+          </section>
+          
+    <br><br>
+    <a href="Teoricos.html">Volver a inicio</a>
+</body>
+
+</html>
