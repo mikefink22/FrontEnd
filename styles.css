@@ -131,6 +131,55 @@ header h1 {
     color: var(--primary-color);
 }
 
+/* --- Sección de Teoría y Conceptos --- */
+.theory-section {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border-color); /* Separación sutil de la tabla */
+}
+
+.concept-card {
+    background-color: #eef2f7; /* Azul muy tenue para diferenciar del fondo */
+    border-left: 6px solid var(--secondary-color); /* Acento lateral */
+    padding: 2rem;
+    border-radius: 0 12px 12px 0; /* Redondeado solo en la derecha */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse */
+.concept-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.concept-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.concept-card p {
+    color: #2c3e50;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Elimina el margen inferior del último párrafo */
+.concept-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Resalte de palabras clave dentro del texto */
+.concept-card strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
 /* --- Botones en Tabla --- */
 .btn-sm {
     display: inline-block;
