@@ -4,24 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumen Teórico</title>
+    <title>Mastering FrontEnd | Mi Resumen Teórico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body background="OIG.jpg">
+<body>
 
-    <nav>
-        <h2>RESUMEN TEÓRICO</h2>
-        <a href="Resumen teorico/enlaces.html" target="_blank">ENLACES EN HTML</a>
-        <a href="Resumen teorico/imagenes.html" target="_blank">IMÁGENES EN HTML</a>
-        <a href="Resumen teorico/tablas.html" target="_blank">TABLAS EN HTML</a>
-        <a href="Resumen teorico/formularios.html" target="_blank">FORMULARIOS EN HTML</a>
-        <a href="Resumen teorico/secciones.html" target="_blank">SECCIONES EN HTML</a>
-        <a href="JavaScript/videos/index.html" target="_blank">JAVASCRIPT</a>
-        <a href="JavaScript/videos/setymap.html" target="_blank">SET Y MAP</a>
-        <a href="JavaScript/videos/dom.html" target="_blank">DOM</a>
-        <a href="Resumen teorico/notas.html" target="_blank">NOTAS VARIAS</a>
+    <header>
+        <h1>Ecosistema de Desarrollo FrontEnd</h1>
+        <p>Apuntes técnicos, herramientas y fundamentos esenciales</p>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-group">
+            <strong>HTML & Estructura:</strong>
+            <a href="Resumen teorico/enlaces.html" target="_blank">Enlaces</a>
+            <a href="Resumen teorico/imagenes.html" target="_blank">Imágenes</a>
+            <a href="Resumen teorico/tablas.html" target="_blank">Tablas</a>
+            <a href="Resumen teorico/formularios.html" target="_blank">Formularios</a>
+            <a href="Resumen teorico/secciones.html" target="_blank">Secciones</a>
+        </div>
+        <div class="nav-group">
+            <strong>JavaScript & Lógica:</strong>
+            <a href="JavaScript/videos/index.html" target="_blank">JS Core</a>
+            <a href="JavaScript/videos/setymap.html" target="_blank">Set y Map</a>
+            <a href="JavaScript/videos/dom.html" target="_blank">DOM</a>
+            <a href="Resumen teorico/notas.html" target="_blank">Notas Varias</a>
+        </div>
     </nav>
+
+    <main class="container">
+        <section id="stack">
+            <h2>Stack Tecnológico Recomendado</h2>
+            <p>Como desarrollador/a Frontend, estas son las tecnologías clave que manejarás en el lado del cliente:</p>
+
+            <div class="table-responsive">
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Tecnología</th>
+                            <th>Documentación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3"><strong>Fundamentos</strong></td>
+                            <td>HTML / CSS</td>
+                            <td><a href="https://devdocs.io/html/" class="btn-sm" target="_blank">DevDocs</a></td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td><a href="https://devdocs.io/javascript/" class="btn-sm" target="_blank">DevDocs</a></td>
+                        </tr>
+                        <tr>
+                            <td>Frameworks CSS</td>
+                            <td><a href="https://getbootstrap.com/" class="btn-sm" target="_blank">Bootstrap</a></td>
+                        </tr>
+                        <tr class="separator">
+                            <td colspan="3">Frameworks de JavaScript</td>
+                        </tr>
+                        <tr>
+                            <td>React JS</td>
+                            <td>Biblioteca UI</td>
+                            <td><a href="https://es.reactjs.org/" class="btn-sm" target="_blank">Oficial</a></td>
+                        </tr>
+                        <tr>
+                            <td>Vue / Angular</td>
+                            <td>Frameworks</td>
+                            <td><a href="https://vuejs.org/" class="btn-sm" target="_blank">Vue</a></td>
+                        </tr>
+                        <tr class="separator">
+                            <td colspan="3">Herramientas de entorno</td>
+                        </tr>
+                        <tr>
+                            <td>Preprocesadores</td>
+                            <td>SASS / Stylus</td>
+                            <td><a href="https://sass-lang.com/" class="btn-sm" target="_blank">Sass</a></td>
+                        </tr>
+                        <tr>
+                            <td>Empaquetadores</td>
+                            <td>Babel / Webpack</td>
+                            <td><a href="https://webpack.js.org/" class="btn-sm" target="_blank">Webpack</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Mi Repositorio Personal de Aprendizaje</p>
+    </footer>
 
 </body>
 
