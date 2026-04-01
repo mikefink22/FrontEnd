@@ -9,7 +9,7 @@
 
 <body>
     <a href="../index.html">Volver a inicio</a>
-    <h3>SECCIONES EN HTML</h3>
+    <h1>SECCIONES EN HTML</h1>
     <p>Las páginas web se trabajan con lo que se conoce como un <strong>esquema</strong> (outline). Esto es un índice de
         los apartados de una página web que muestra la relación de jerarquía entre los diferentes apartados y
         subapartados. El concepto de esquema se formalizó en HTML 5 con más precisión que en HTML 4 / XHTML 1 y explica
@@ -21,7 +21,7 @@
 
     <div><img src="secciones.png" alt="Secciones"></div>
 
-    <h4>ETIQUETAS:</h4>
+    <h2>ETIQUETAS:</h2>
 
     <ul>
         <li>&lt;section&gt;: se utiliza para representar una sección "general" dentro de un documento o aplicación, como
@@ -40,7 +40,7 @@
         <li>&lt;hgroup&gt;: se utiliza para agrupar un conjunto de elementos h1-h6 cuando el título tienen varios
             niveles.</li>
     </ul>
-    <h4>ETIQUETAS EXTRAS:</h4>
+    <h3>ETIQUETAS EXTRAS:</h3>
     <ul>
         <li><strong>ETIQUETA DIV</strong></li>
         <p>Es la etiqueta de división. Se utiliza para hacer divisiones de contenido en la página web como texto,
@@ -57,31 +57,34 @@
             elementos con el mismo estilo. No realiza ningún cambio visual por sí misma. Es obligatorio cerrarla.</p>
     </ul>
 
-    <p>Ejemplo de organización de una página en secciones:</p>
-    <img src="navSecciones.png" alt="Código">
-    <p>Y así se vería:</p>
-    <nav>
-        <ul>
-            <li><a href="#intro">Introducción</a></li>
-            <li><a href="#contenido">Contenido principal</a></li>
-            <li><a href="#conclusion">Conclusión</a></li>
-        </ul>
-    </nav>
+    <section>
+        <h2>Ejemplo de organización de una página en secciones:</h2>
+        <img src="navSecciones.png" alt="Código">
+        <p>Y así se vería:</p>
+        <nav>
+            <ul>
+                <li><a href="#intro">Introducción</a></li>
+                <li><a href="#contenido">Contenido principal</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+            </ul>
+        </nav>
 
-    <section id="intro">
-        <h1>Introducción</h1>
-        <p>Esta es la introducción de mi página.</p>
+        <section id="intro">
+            <h2>Introducción</h2>
+            <p>Esta es la introducción de mi página.</p>
+        </section>
+
+        <section id="contenido">
+            <h2>Contenido principal</h2>
+            <p>Este es el contenido principal de mi página.</p>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusión</h2>
+            <p>Esta es la conclusión de mi página.</p>
+        </section>
     </section>
 
-    <section id="contenido">
-        <h1>Contenido principal</h1>
-        <p>Este es el contenido principal de mi página.</p>
-    </section>
-
-    <section id="conclusion">
-        <h1>Conclusión</h1>
-        <p>Esta es la conclusión de mi página.</p>
-    </section>
 
     <br><br>
     <a href="../index.html">Volver a inicio</a>
